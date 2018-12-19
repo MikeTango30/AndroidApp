@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">DEMO app</string>
-    <string name='rememberLogin'>Remember</string>
+
+    <string name="loginRemember">Remember</string>
     <string name='loginLogin'>Login</string>
-    <string name='registerLogin'>Register</string>
+    <string name="loginRegister">Register</string>
+    <string name='loginTitle'>Login</string>
+
+    <string name='searchTitle'>Search</string>
 </resources>
