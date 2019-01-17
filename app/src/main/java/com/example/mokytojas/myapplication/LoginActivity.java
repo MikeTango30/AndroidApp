@@ -27,19 +27,24 @@ public class LoginActivity extends AppCompatActivity {
         Button registerBtn = findViewById(R.id.btnRegister);
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
                 String userLogin = login.getText().toString();
                 String userPassword = password.getText().toString();
 
-                Toast.makeText(LoginActivity.this, userLogin+"\n"+userPassword, Toast.LENGTH_SHORT).show();
+                User person = new User(userLogin, userPassword);
 
-                Intent goToSearchActivity = new Intent(LoginActivity.this, SearchActivity.class);
-                startActivity(goToSearchActivity);
+                login.setError(null);
+                password.setError(null);
+
+                if (Validation.isValidUsername(person.getUsername()) && Validation.isValidPassword(person.getPassword())) {
+                    Intent goToSearchActivity = new Intent(LoginActivity.this, SearchActivity.class);
+                    startActivity(goToSearchActivity);
+                } else {
+                    login.setError(getResources().getString(R.string.loginError));
+                    login.requestFocus();
+                }
             }
         });
-
     }
-
 }

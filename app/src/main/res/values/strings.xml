@@ -5,6 +5,7 @@
     <string name='loginLogin'>Login</string>
     <string name="loginRegister">Register</string>
     <string name='loginTitle'>Login</string>
+    <string name='loginError'>Wrong username or/and password</string>
 
     <string name='searchTitle'>Search</string>
 </resources>
