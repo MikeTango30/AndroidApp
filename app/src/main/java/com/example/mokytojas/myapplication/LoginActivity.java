@@ -7,8 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.Toast;
-
+import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -22,9 +21,21 @@ public class LoginActivity extends AppCompatActivity {
 
         final EditText login = findViewById(R.id.textUsername);
         final EditText password = findViewById(R.id.textPassword);
-        CheckBox remember = findViewById(R.id.checkBoxRemember);
+        final CheckBox remember = findViewById(R.id.checkBoxRemember);
         Button loginBtn = findViewById(R.id.btnLogin);
         Button registerBtn = findViewById(R.id.btnRegister);
+
+        final User person = new User(LoginActivity.this);
+
+        remember.setChecked(person.isRemembered());
+
+        if(remember.isChecked()){
+            login.setText(person.getUsernameForLogin(), TextView.BufferType.EDITABLE);
+            password.setText(person.getPasswordForLogin(), TextView.BufferType.EDITABLE);
+        } else {
+            login.setText("", TextView.BufferType.EDITABLE);
+            password.setText("", TextView.BufferType.EDITABLE);
+        }
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,12 +43,17 @@ public class LoginActivity extends AppCompatActivity {
                 String userLogin = login.getText().toString();
                 String userPassword = password.getText().toString();
 
-                User person = new User(userLogin, userPassword);
-
                 login.setError(null);
                 password.setError(null);
 
-                if (Validation.isValidUsername(person.getUsername()) && Validation.isValidPassword(person.getPassword())) {
+                if (Validation.isValidUsername(userLogin) && Validation.isValidPassword(userPassword)) {
+                    person.setUsernameForLogin(userLogin);
+                    person.setPasswordForLogin(userPassword);
+                    if (remember.isChecked()){
+                        person.setRememberMeKey(true);
+                    } else {
+                        person.setRememberMeKey(false);
+                    }
                     Intent goToSearchActivity = new Intent(LoginActivity.this, SearchActivity.class);
                     startActivity(goToSearchActivity);
                 } else {

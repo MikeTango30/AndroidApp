@@ -75,5 +75,5 @@ public class User {
     public void setRememberMeKey(boolean rememberMeKey){
         this.sharedPreferences.edit().putBoolean(REMEMBER_ME_KEY,rememberMeKey).commit();
     }
-    
+
 }
