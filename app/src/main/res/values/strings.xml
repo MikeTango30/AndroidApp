@@ -8,4 +8,29 @@
     <string name='loginError'>Wrong username or/and password</string>
 
     <string name='searchTitle'>Search</string>
+
+    <!--pokemon-->
+    <string name="entryName">Name</string>
+    <string name="entryWeight">Weight</string>
+    <string name="entryCp">CP</string>
+    <string name="entryCpStrong">Strong</string>
+    <string name="entryCpMedium">Medium</string>
+    <string name="entryCpWeak">Weak</string>
+    <string name="entryAbilities">Abilities</string>
+    <string name="entryAbilitiesUltimate">Ultimate</string>
+    <string name="entryAbilitiesFighting">Fighting</string>
+    <string name="entryAbilitiesRange">Range</string>
+
+    <string name="entryType">Type</string>
+    <string name="entryTypeWater">Water</string>
+    <string name="entryTypeFire">Fire</string>
+    <string name="entryTypeWind">Wind</string>
+    <string name="entryTypeEarth">Earth</string>
+    <string name="entryTypeElectric">Electric</string>
+
+    <string name="entrySubmit">ADD</string>
+    <string name="entryNameError">Name was incorrect!</string>
+    <string name="entryWeightError">Weight was incorrect!</string>
+    <string name="entryCheckAbilities">You must select at least one ability!</string>
+    <!--pokemon end-->
 </resources>
