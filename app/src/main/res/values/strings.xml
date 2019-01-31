@@ -32,5 +32,6 @@
     <string name="entryNameError">Name was incorrect!</string>
     <string name="entryWeightError">Weight was incorrect!</string>
     <string name="entryCheckAbilities">You must select at least one ability!</string>
+    <string name="entryDatabaseInfo">Please wait, sending to DB.</string>
     <!--pokemon end-->
 </resources>

@@ -1,6 +1,8 @@
 package com.example.mokytojas.myapplication;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +15,11 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.HashMap;
+
 public class NewEntryActivity extends AppCompatActivity {
+
+    private static final String INSERT_URL = "https://deadmantest.000webhostapp.com/mobile/db.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,12 +107,59 @@ public class NewEntryActivity extends AppCompatActivity {
                             abilities,
                             entryTypeTemp
                     );
-                    Toast.makeText(NewEntryActivity.this, pokemon.toString(), Toast.LENGTH_LONG).show();
-                    Intent goToSearchActivity = new Intent(NewEntryActivity.this, SearchActivity.class);
-                    startActivity(goToSearchActivity);
+                    insertToDB(pokemon);
+                    //Toast.makeText(NewEntryActivity.this, pokemon.toString(), Toast.LENGTH_LONG).show();
                 }
 
             }
         });
+    }
+
+    private void insertToDB(Pokemon pokemon) {
+        class NewEntry extends AsyncTask<String, Void, String> {
+
+            ProgressDialog loading;
+            DB db = new DB();
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                loading = ProgressDialog.show(NewEntryActivity.this,
+                        getResources().getString(R.string.entryDatabaseInfo),
+                        null, true, true);
+            }
+
+            @Override
+            protected String doInBackground(String... strings) {
+                // Pirmas string yra raktas, antras - reikšmė.
+                HashMap<String, String> pokemonData = new HashMap<String, String>();
+                pokemonData.put("name", strings[0]);
+                pokemonData.put("weight", strings[1]);
+                pokemonData.put("cp", strings[2]);
+                pokemonData.put("abilities", strings[3]);
+                pokemonData.put("type", strings[4]);
+                //pokemonData.put("action", "insert");
+
+                String result = db.sendPostRequest(INSERT_URL, pokemonData);
+
+                return result;
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                loading.dismiss();
+                Toast.makeText(NewEntryActivity.this, s, Toast.LENGTH_SHORT).show();
+                Intent goToSearchActivity = new Intent(NewEntryActivity.this, SearchActivity.class);
+                startActivity(goToSearchActivity);
+            }
+        }
+
+        NewEntry newEntry = new NewEntry();
+        newEntry.execute(pokemon.getName(),
+                Double.toString(pokemon.getWeight()),
+                pokemon.getCp(),
+                pokemon.getAbilities(),
+                pokemon.getType());
     }
 }
