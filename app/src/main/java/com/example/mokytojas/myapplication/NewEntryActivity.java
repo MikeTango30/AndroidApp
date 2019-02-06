@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -19,7 +18,7 @@ import java.util.HashMap;
 
 public class NewEntryActivity extends AppCompatActivity {
 
-    private static final String INSERT_URL = "https://deadmantest.000webhostapp.com/mobile/db.php";
+    public static final String DB_URL = "https://deadmantest.000webhostapp.com/mobile/db.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,9 +137,9 @@ public class NewEntryActivity extends AppCompatActivity {
                 pokemonData.put("cp", strings[2]);
                 pokemonData.put("abilities", strings[3]);
                 pokemonData.put("type", strings[4]);
-                //pokemonData.put("action", "insert");
+                pokemonData.put("action", "insert");
 
-                String result = db.sendPostRequest(INSERT_URL, pokemonData);
+                String result = db.sendPostRequest(DB_URL, pokemonData);
 
                 return result;
             }

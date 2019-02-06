@@ -8,6 +8,8 @@
     <string name='loginError'>Wrong username or/and password</string>
 
     <string name='searchTitle'>Search</string>
+    <string name="search_new_btn">New</string>
+    <string name="entry_db_loading_msg">Please wait</string>
 
     <!--pokemon-->
     <string name="entryName">Name</string>

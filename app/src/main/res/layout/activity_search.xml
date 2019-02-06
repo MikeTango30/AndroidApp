@@ -4,25 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchActivity"
-    android:orientation="vertical">
+    android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/textView3"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/pokemonList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Search Activity"
-        android:textAlignment="center"
-        android:textSize="40dp" />
-
-    <Button
-        android:id="@+id/insertBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Insert New"
-        android:layout_marginTop="470dp"
+        android:layout_height="match_parent"
+        android:paddingTop="10dp"
+        android:layout_weight="1"
         />
 
-
+    <Button
+        android:id="@+id/search_btn"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search_new_btn" />
 
 </LinearLayout>
