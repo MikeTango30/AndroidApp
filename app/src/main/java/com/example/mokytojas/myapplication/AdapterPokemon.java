@@ -1,6 +1,7 @@
 package com.example.mokytojas.myapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +14,8 @@ import java.util.Collections;
 import java.util.List;
 
 public class AdapterPokemon extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
+    public static final String ENTRY = "com.example.mokytojas.myapplication.ENTRY";
 
     private Context context;
     private LayoutInflater inflater;
@@ -77,12 +80,16 @@ public class AdapterPokemon extends RecyclerView.Adapter<RecyclerView.ViewHolder
             itemView.setOnClickListener(this);
         }
 
-        // Click event for all items
+        // Click event for item
         @Override
         public void onClick(View v) {
+            int itemPosition = getAdapterPosition();
 
-            Toast.makeText(context, "You clicked an item", Toast.LENGTH_SHORT).show();
+            Pokemon pokemon = data.get(itemPosition);
 
+            Intent intent = new Intent(context, NewEntryActivity.class);
+            intent.putExtra(ENTRY, pokemon);
+            context.startActivity(intent);
         }
 
     }

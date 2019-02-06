@@ -4,94 +4,135 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewEntryActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".NewEntryActivity">
 
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/entryName" />
-
-    <EditText
-        android:id="@+id/entryName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/entryWeight" />
-
-    <EditText
-        android:id="@+id/entryWeight"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/entryCp" />
-
-    <RadioGroup
-        android:id="@+id/entryCp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/entryCp">
-        <RadioButton
-            android:id="@+id/entryCpStrong"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/entryCpStrong"
-            android:checked="true"/>
-        <RadioButton
-            android:id="@+id/entryCpMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/entryCpMedium"/>
-        <RadioButton
-            android:id="@+id/entryCpWeak"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/entryCpWeak"/>
-    </RadioGroup>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/entryAbilities" />
-    <CheckBox
-        android:id="@+id/entryAbilitiesUltimate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/entryAbilitiesUltimate"
-        android:checked="true"/>
-    <CheckBox
-        android:id="@+id/entryAbilitiesFighting"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/entryAbilitiesFighting"/>
-    <CheckBox
-        android:id="@+id/entryAbilitiesRange"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/entryAbilitiesRange"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/entryType" />
-
-    <Spinner
-        android:id="@+id/entryType"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    </Spinner>
-    <Button
-        android:id="@+id/entrySubmit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/entrySubmit" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/entryName" />
+
+            <EditText
+                android:id="@+id/entryName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/entryWeight" />
+
+            <EditText
+                android:id="@+id/entryWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/entryCp" />
+
+            <RadioGroup
+                android:id="@+id/entryCp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/entryCp">
+
+                <RadioButton
+                    android:id="@+id/entryCpStrong"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/entryCpStrong" />
+
+                <RadioButton
+                    android:id="@+id/entryCpMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/entryCpMedium" />
+
+                <RadioButton
+                    android:id="@+id/entryCpWeak"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/entryCpWeak" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/entryAbilities" />
+
+            <CheckBox
+                android:id="@+id/entryAbilitiesUltimate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/entryAbilitiesUltimate" />
+
+            <CheckBox
+                android:id="@+id/entryAbilitiesFighting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/entryAbilitiesFighting" />
+
+            <CheckBox
+                android:id="@+id/entryAbilitiesRange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/entryAbilitiesRange" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/entryType" />
+
+            <Spinner
+                android:id="@+id/entryType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </Spinner>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <Button
+                    android:id="@+id/btnInsert"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/colorGreen"
+                    android:text="@string/entryInsert" />
+
+                <Button
+                    android:id="@+id/btnUpdate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/colorYellow"
+                    android:text="@string/entryUpdate" />
+
+                <Button
+                    android:id="@+id/btnDelete"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/colorRed"
+                    android:text="@string/entryDelete" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

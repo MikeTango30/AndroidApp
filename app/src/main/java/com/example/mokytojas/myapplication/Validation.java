@@ -7,7 +7,7 @@ public class Validation {
     private static final String VALID_USERNAME_PATTERN = "^[A-Za-z]{5,30}$";
     private static final String VALID_PASSWORD_PATTERN = "^[A-Za-z0-9!@#$%^&*]{5,30}$";
     private static final String VALID_ENTRYNAME_PATTERN = "^[A-Za-z]{2,15}$";
-    private static final String VALID_ENTRYWEIGHT_PATTERN = "^[0-9]{1,4}$";
+    private static final String VALID_ENTRYWEIGHT_PATTERN = "^[0-9.]{1,4}$";
 
     public static boolean isValidUsername(String username) {
         Pattern credentialPattern = Pattern.compile(VALID_USERNAME_PATTERN);

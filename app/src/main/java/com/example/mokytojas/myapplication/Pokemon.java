@@ -1,6 +1,10 @@
 package com.example.mokytojas.myapplication;
 
-public class Pokemon {
+import java.io.Serializable;
+
+@SuppressWarnings("serial") //With this annotation we are going to hide compiler warnings
+
+public class Pokemon implements Serializable {
     private int id;
     private String data;
     private String name;

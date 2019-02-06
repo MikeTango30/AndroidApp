@@ -1,12 +1,12 @@
 	<?php 
 
 	$servername = "localhost";
-	$username = "id7924278_pokemon";
-	$password = "123456";
-	$dbname = "id7924278_pokemon";
+	$username = "id7924_pokemon";
+	$password = "slaptas";
+	$dbname = "id7924_pokemon";
 
 	//Create connection
-	$conn = new mysqli ($servername, $username, $password, $dbname);
+	$conn = new mysqli($servername, $username, $password, $dbname);
 
 	//Check connection
 	if ($conn->connect_error){
